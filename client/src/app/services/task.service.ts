@@ -11,4 +11,7 @@ export class TaskService {
   getTasks():Observable<any> {
    return this.http.get("http://localhost:8080/task")
   }
+  deleteTask(id):Observable<any> {
+    return this.http.delete("http://localhost:8080/task/"+id)
+   }
 }

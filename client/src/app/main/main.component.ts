@@ -1,3 +1,4 @@
+import { ThrowStmt } from '@angular/compiler';
 import { Component, OnInit } from '@angular/core';
 import { TaskService } from '../services/task.service';
 
@@ -24,6 +25,14 @@ export class MainComponent implements OnInit {
             }
           }
         )
+  }
+  deleteTaskById(id) {
+    this.taskService.deleteTask(id)
+        .subscribe((res) => {
+          if(res.success){
+            this.getAllTasks()
+          }
+        })
   }
 
 }
