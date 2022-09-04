@@ -1,0 +1,37 @@
+<div class="container p-5">
+    <div class="row justify-content-center">
+        <div class="col-8">
+            <div class="card shadow">
+                <div class="card-header">{{currnetCity}}</div>
+                <div class="card-body">
+                    <table class="w-100">
+                        <tr>
+                            <th>Longitude</th>
+                            <td *ngIf="data">{{data.coord.lon}}</td>
+                        </tr>
+                        <tr>
+                            <th>Latitude</th>
+                            <td *ngIf="data">{{data.coord.lat}}</td>
+                        </tr>
+                        <tr>
+                            <th>Wind Speed</th>
+                            <td *ngIf="data">{{data.wind.speed}}</td>
+                        </tr>
+                        <tr>
+                            <th>Humidity</th>
+                            <td *ngIf="data">{{data.main.humidity}}</td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="card-footer">
+                    <div class="form-group">
+                        <input class="form-control" [(ngModel)]="cityName" placeholder="write city name">
+                    </div>
+                   <p class="p-2 text-center">
+                    <button class="btn btn-outline-info" (click)="search()">Search</button>
+                   </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
