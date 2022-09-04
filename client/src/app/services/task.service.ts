@@ -14,4 +14,10 @@ export class TaskService {
   deleteTask(id):Observable<any> {
     return this.http.delete("http://localhost:8080/task/"+id)
    }
+   addTasks(data):Observable<any> {
+    return this.http.post("http://localhost:8080/task", data)
+   }
+   editTask(id,data):Observable<any> {
+    return this.http.patch("http://localhost:8080/task/"+id, data)
+   }
 }
